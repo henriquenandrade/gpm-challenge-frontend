@@ -63,8 +63,8 @@ export default function useAppliances() {
     return {
         appliances,
         appliance,
-        getAppliances
-        getAppliance
+        getAppliances,
+        getAppliance,
         storeAppliance,
         updateAppliance,
         destroyAppliance,
