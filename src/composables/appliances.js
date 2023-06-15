@@ -8,7 +8,7 @@ export default function useAppliances() {
     
     const appliances = ref([]);
     const appliance = ref([]);
-    const errors = ref[{}];
+    const errors = ref([]);
     const router = useRouter();
 
     const getAppliances = async () => {
@@ -26,7 +26,7 @@ export default function useAppliances() {
             await axios.post('appliance', data);
             await router.push({name: "ApplianceIndex"})
         } catch (error) {
-            if (e.response.status === 422) {
+            if (error.response.status === 422) {
                 errors.value = error.response.data.errors
             }
         }
@@ -34,13 +34,13 @@ export default function useAppliances() {
 
     const updateAppliance = async (id) => {
         try {
-            await axios.put(`appliance/${id}`, skill.value)
+            await axios.put(`appliance/${id}`, appliance.value)
             await router.push({name: "ApplianceIndex"})
         } catch (error) {
-            if (e.response.status === 422) {
+            if (error.response.status === 422) {
                 errors.value = error.response.data.errors
             }
-            if (e.response.status === 404) {
+            if (error.response.status === 404) {
                 errors.value = error.response.data.errors
             }
         }
@@ -55,7 +55,7 @@ export default function useAppliances() {
             await getAppliances();
             await router.push({name: "ApplianceIndex"})
         } catch (error) {
-            if (e.response.status === 404) {
+            if (error.response.status === 404) {
                 errors.value = error.response.data.errors
             }
         }
