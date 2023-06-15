@@ -7,7 +7,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="max-w-7xl mx-auto">
 
             <div class=" p-3 text-center ">
-                <h1 class=" text-4xl font-bold text-indigo-800 p-2 mx-auto w-full "> GPM - Appliances </h1>
+                <h1 class=" text-4xl font-bold text-indigo-800 p-2 mx-auto w-full "> GPM - Challenge </h1>
             </div>
 
             <nav class="p-5 text-center">
