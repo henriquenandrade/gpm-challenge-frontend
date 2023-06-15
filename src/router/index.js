@@ -23,7 +23,7 @@ const router = createRouter({
             path: '/appliances/:id/edit',
             name: 'ApplianceEdit',
             component: () => import('../views/appliances/ApplianceEdit.vue'),
-            props: true,
+            props: true
         }
     ]
 })

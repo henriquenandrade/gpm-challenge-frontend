@@ -1,21 +1,20 @@
-import { ref } from "vue"
-import axios from "axios";
-import { useRouter } from "vue-router";
+import { ref } from 'vue'
+import axios from 'axios'
+import { useRouter } from 'vue-router'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api/'
 
 export default function useAppliances() {
-    
-    const appliances = ref([]);
-    const appliance = ref([]);
-    const errors = ref([]);
-    const router = useRouter();
+    const appliances = ref([])
+    const appliance = ref([])
+    const errors = ref([])
+    const router = useRouter()
 
     const getAppliances = async () => {
-        const response = await axios.get('appliance');
+        const response = await axios.get('appliance')
         appliances.value = response.data
     }
-    
+
     const getAppliance = async (id) => {
         const response = await axios.get(`appliance/${id}`)
         appliance.value = response.data
@@ -23,8 +22,8 @@ export default function useAppliances() {
 
     const storeAppliance = async (data) => {
         try {
-            await axios.post('appliance', data);
-            await router.push({name: "ApplianceIndex"})
+            await axios.post('appliance', data)
+            await router.push({ name: 'ApplianceIndex' })
         } catch (error) {
             if (error.response.status === 422) {
                 errors.value = error.response.data.errors
@@ -35,7 +34,7 @@ export default function useAppliances() {
     const updateAppliance = async (id) => {
         try {
             await axios.put(`appliance/${id}`, appliance.value)
-            await router.push({name: "ApplianceIndex"})
+            await router.push({ name: 'ApplianceIndex' })
         } catch (error) {
             if (error.response.status === 422) {
                 errors.value = error.response.data.errors
@@ -45,15 +44,15 @@ export default function useAppliances() {
             }
         }
     }
-    
+
     const destroyAppliance = async (id) => {
         try {
-            if (!window.confirm("Quer realmente excluir esse eletrodoméstico?")) {
-                return;
+            if (!window.confirm('Quer realmente excluir esse eletrodoméstico?')) {
+                return
             }
             await axios.delete(`appliance/${id}`)
-            await getAppliances();
-            await router.push({name: "ApplianceIndex"})
+            await getAppliances()
+            await router.push({ name: 'ApplianceIndex' })
         } catch (error) {
             if (error.response.status === 404) {
                 errors.value = error.response.data.errors
