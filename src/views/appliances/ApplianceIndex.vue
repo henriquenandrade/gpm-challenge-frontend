@@ -50,7 +50,7 @@ onMounted(() => getAppliances())
                         <td class="py-4 px-6 font-semibold">{{ appliance.name }}</td>
                         <td class="py-4 px-6">{{ appliance.description }}</td>
                         <td class="py-4 px-6">{{ appliance.eletric_tension }}</td>
-                        <td class="py-4 px-6">{{ appliance.brand }}</td>
+                        <td class="py-4 px-6">{{ appliance.brand.name }}</td>
                         <td class="py-4 px-6 flex justify-around">
                             <RouterLink
                                 :to="{ name: 'ApplianceEdit', params: { id: appliance.id } }"
