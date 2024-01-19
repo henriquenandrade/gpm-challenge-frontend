@@ -1,10 +1,10 @@
 # GPM Challenge Frontend
 
-Fronend para aplicação de cadastras, listagem edição e exclusão de eletrodomésticos, consumindo api em laravel.
+Front-end para aplicação de cadastro, listagem, edição e exclusão de eletrodomésticos, consumindo api em Laravel.
 
 ## 🏗️ Instalação do Projeto
 
-Clone esse repositório para seu computador.
+Clone esse repositório para seu computador:
 ```
 git clone https://github.com/mariolucasdev/gpm-challenge-frontend.git
 
@@ -13,23 +13,23 @@ depois
 cd gpm-challenge-frontend
 ```
 
-## 🏗️ Instalação as Dependências
+## 🏗️ Instalando as Dependências:
 ```sh
 npm install
 ```
 
-## ⏯️ Execute a aplicação
+## ⏯️ Execute a aplicação:
 ```sh
 npm run dev
 ```
 
-## ⚠️ Caso deseje coloca em produção, execute:
+## ⚠️ Caso deseje colocar em produção, execute:
 
 ```sh
 npm run build
 ```
 
-## ⚠️ Para o funcionamento do projeto o backend deve estar em execução no serguinte endereço:
+## ⚠️ Para o funcionamento do projeto o backend deve estar em execução no seguinte endereço:
 ```sh
 http://localhost:8000
 ```
